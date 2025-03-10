@@ -6,7 +6,7 @@ import asyncio
 TOKEN = os.getenv("DISCORD_TOKEN")
 CHANNEL_IDS = [int(id) for id in os.getenv("DISCORD_CHANNEL_IDS").split(",")]
 
-client = discord.Client(intents=discord.Intents.default())
+client = discord.Client()
 
 @client.event
 async def on_ready():
