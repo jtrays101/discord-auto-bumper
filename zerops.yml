@@ -1,0 +1,11 @@
+zerops:
+  - setup: python0
+    build:
+      base: python@3.12
+      deployFiles:
+        - autobump.py
+    run:
+      base: python@3.12
+      prepareCommands:
+        - pip install discord.py-self
+      start: python autobump.py
