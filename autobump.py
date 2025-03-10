@@ -19,7 +19,7 @@ async def on_ready():
                 print(f"❌ Error: Could not find channel {channel_id}. Check ID.")
                 continue
             try:
-                await channel.send("!d bump")
+                await channel.send("/bump")
                 print(f"✅ Successfully bumped in {channel.name} ({channel_id})!")
             except Exception as e:
                 print(f"⚠️ Error bumping in channel {channel_id}: {e}")
