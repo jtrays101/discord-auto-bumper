@@ -7,5 +7,6 @@ zerops:
     run:
       base: python@3.12
       prepareCommands:
+        - pip uninstall -y discord
         - pip install discord.py-self
       start: python autobump.py
