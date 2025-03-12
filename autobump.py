@@ -9,7 +9,7 @@ CHANNEL_IDS = [int(id) for id in os.getenv("DISCORD_CHANNEL_IDS").split(",")]
 
 # Initialize client with proper intents
 intents = discord.Intents.default()
-client = discord.Client(intents=intents)
+client = discord.Client()
 
 @client.event
 async def on_ready():
