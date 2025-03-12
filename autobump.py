@@ -1,13 +1,15 @@
 import os
 import discord
 import asyncio
+from discord.ext import commands
 
 # Retrieve token & channels from environment variables
 TOKEN = os.getenv("DISCORD_TOKEN")  # Make sure this is set in Zerops
 CHANNEL_IDS = [int(id) for id in os.getenv("DISCORD_CHANNEL_IDS").split(",")]
 
-# Initialize client
-client = discord.Client()
+# Initialize client with proper intents
+intents = discord.Intents.default()
+client = discord.Client(intents=intents)
 
 @client.event
 async def on_ready():
@@ -21,8 +23,8 @@ async def on_ready():
                 continue
 
             try:
-                # Correctly trigger the Disboard bot's bump command
-                await channel.send("<@302050872383242240> bump")
+                # Simulate sending the `/bump` slash command
+                await channel.send("/bump")
                 print(f"✅ Successfully bumped in {channel.name} ({channel_id})!")
             except Exception as e:
                 print(f"❌ Error bumping in channel {channel_id}: {e}")
@@ -32,4 +34,3 @@ async def on_ready():
 
 # Run the client using the user token
 client.run(TOKEN)
-
