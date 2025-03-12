@@ -31,4 +31,5 @@ async def on_ready():
         await asyncio.sleep(7200)  # Wait 2 hours before the next bump
 
 # Run the client using the user token
-client.run(TOKEN, bot=False)
+client.run(TOKEN)
+
